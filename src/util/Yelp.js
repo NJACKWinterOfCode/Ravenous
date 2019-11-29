@@ -7,7 +7,16 @@ const Yelp = {
         Authorization: `Bearer ${apiKey}`
       }
     })
-    .then(response => response.json())
+    .then(response => {
+      if(!response.ok){
+        throw Error(response.statusText);
+        return
+      }
+      else {
+        return response.json()
+      }
+    })
+    
     .then((jsonResponse) => {
       if(jsonResponse.businesses){
         return jsonResponse.businesses.map((business) => {
@@ -26,6 +35,12 @@ const Yelp = {
         })
       }
     })
+    .catch(function(_Error){
+      console.log("Error");
+      
+    }
+    )
+    
   }
 };
 

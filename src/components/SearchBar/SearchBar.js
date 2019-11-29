@@ -4,6 +4,7 @@ import './SearchBar.css'
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       term: '',
       location: '',
@@ -50,8 +51,10 @@ class SearchBar extends React.Component {
   }
 
   renderSortByOptions(){
+    
     return Object.keys(this.sortByOptions).map((sortByOption) => {
       let sortByOptionValue = this.sortByOptions[sortByOption];
+      
       return <li key={sortByOptionValue} className={this.getSortByClass(sortByOptionValue)} onClick={this.handleSortByChange.bind(this, sortByOptionValue)}>{sortByOption}</li>;
     })
   }
@@ -62,6 +65,7 @@ class SearchBar extends React.Component {
         <div className="SearchBar-sort-options">
           <ul>
             {this.renderSortByOptions()}
+            
           </ul>
         </div>
         <div className="SearchBar-fields">
