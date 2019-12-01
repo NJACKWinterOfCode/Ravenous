@@ -2,7 +2,6 @@ import React from 'react'
 import './BusinessList.css'
 import Business from '../Business/Business'
 
-
 class BusinessList extends React.Component {
   constructor(props){
   super(props);
@@ -11,16 +10,14 @@ class BusinessList extends React.Component {
   {
     console.log("list is empty")
   }
-  };
-  
+  };  
   render() {
     return (
       <div>
       <div className="row">
       <div className= "col">
         <a href = "#"><img src={require('./facebook-icon.jpg')} alt="Facebook" ></img></a>
-      </div>
-     
+      </div>     
       <div className="col">
         <a href ="#"><img src={require('./about-us.jpg')} alt="About Us"></img></a>
       </div>
@@ -32,20 +29,15 @@ class BusinessList extends React.Component {
       </div>
       <div className="col">
         <a href="#"><img src ={require('./instagram-icon.jpeg')} alt="Twitter" height="80" width="80"></img></a>
+      </div>  
       </div>
-      
-
-      </div>
-      <div className="BusinessList">
-        
+      <div className="BusinessList">        
         {this.props.businesses.map((business => {
           return <Business business={business} key={business.id} />;
         }))}
-     
       </div>
       </div>
  )
   }
 }
-
 export default BusinessList
