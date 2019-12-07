@@ -1,0 +1,15 @@
+.BusinessList {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 4.4rem 10%;
+  }
+  .row{
+    display:flex
+  }
+  .col{
+    flex:33.33%;
+    padding:40px;
+    height: 50;
+    width: 50;
+  }
